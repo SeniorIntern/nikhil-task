@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--background)]">
       <form
-        className="w-[450px] rounded-md border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
+        className="w-[450px] rounded-[20px] border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
         onSubmit={(e) => {
           e.preventDefault();
           router.push('/2FA');
@@ -30,7 +30,7 @@ export default function Page() {
         <div className="mb-[37px] grid gap-[22px]">
           <div className="grid gap-[7px]">
             <Label labelContent="New Password" htmlFor="new-password" />
-            <Input id="new-password" />
+            <Input id="new-password" type="password" />
           </div>
 
           <div className="grid gap-[7px]">

@@ -7,7 +7,7 @@ type InputProps = {
 
 const Input = ({
   id,
-  className = 'rounded-[10px] border border-[var(--primary-gray)] px-[9px] py-[18px]',
+  className = 'rounded-[10px] border border-[var(--primary-gray)] h-[57px] w-[352px] px-[9px] py-[18px]',
   type = 'text',
   placeholder
 }: InputProps) => {

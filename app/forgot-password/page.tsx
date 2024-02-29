@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--background)]">
       <form
-        className="w-[450px] rounded-md border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
+        className="w-[450px] rounded-[20px] border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
         onSubmit={(e) => {
           e.preventDefault();
           router.push('/change-password');

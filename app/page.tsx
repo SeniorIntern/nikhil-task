@@ -3,15 +3,24 @@
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Label from '@/components/Label';
+import OpenEye from '@/public/eye.png';
 import Logo from '@/public/logo.png';
+import { EyeOff } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--background)]">
       <form
-        className="w-[450px] rounded-md border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
+        className="w-[450px] rounded-[20px] border border-[var(--primary-gray)] bg-white pb-[45px] pl-[48px] pr-[50px] pt-[39px]"
         onSubmit={(e) => {
           e.preventDefault();
         }}
@@ -30,8 +39,32 @@ export default function Home() {
           </div>
 
           <div className="grid gap-[7px]">
-            <Label labelContent="Password" htmlFor="login-password" />
-            <Input id="login-password" type="password" />
+            <Label
+              labelContent="Password"
+              htmlFor="login-password"
+              className="w-full pr-[40px]"
+            />
+            <div className="relative">
+              <Input
+                id="login-password"
+                type={showPassword ? 'text' : 'password'}
+                className="w-full rounded-[10px] border border-[var(--primary-gray)] px-[9px] py-[18px]"
+              />
+              {showPassword ? (
+                <Image
+                  alt="Open eye"
+                  src={OpenEye}
+                  className="absolute right-[15px] top-[50%] translate-y-[-50%] cursor-pointer"
+                  onClick={handleTogglePassword}
+                />
+              ) : (
+                <EyeOff
+                  size="18"
+                  className="absolute right-[15px] top-[50%] translate-y-[-50%] cursor-pointer"
+                  onClick={handleTogglePassword}
+                />
+              )}
+            </div>
           </div>
         </div>
 

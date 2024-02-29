@@ -4,13 +4,9 @@ type LabelProps = {
   htmlFor?: string;
 };
 
-const Label = ({
-  labelContent,
-  className = 'text-[18px]',
-  htmlFor
-}: LabelProps) => {
+const Label = ({ labelContent, className, htmlFor }: LabelProps) => {
   return (
-    <label htmlFor={htmlFor} className={className}>
+    <label htmlFor={htmlFor} className={'text-[18px]' + className}>
       {labelContent}
     </label>
   );
